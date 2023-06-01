@@ -96,7 +96,7 @@ export default function Home() {
       provider
     );
     const _numberOfWhitelisted =
-      await whitelistContract.numAddressesWhilelisted();
+      await whitelistContract.numAddressesWhitelisted();
     // Convert BigNumber to string
     setNumberOfWhitelisted(_numberOfWhitelisted.toString());
   } catch (err) {

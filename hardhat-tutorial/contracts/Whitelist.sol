@@ -9,7 +9,7 @@ contract Whitelist {
     mapping(address => bool) public whilelistAddresses;
 
     // 실제 화리에 등록한 지갑 수
-    uint public numAddressesWhilelisted;
+    uint public numAddressesWhitelisted;
 
     constructor(uint8 _maxWhilelistAddress)
     {
@@ -21,12 +21,12 @@ contract Whitelist {
     
         // 허용 가능한 최대 인원수보다 더 많은 사람들이 화리에 등록하려 할때 에러처리
         //Error(string)이 생성되는 경우 require(x) 에서 x 조건이 false일 경우 
-        require(numAddressesWhilelisted < maxwhilelistAddresses, "Max whilelist addresses already registered");
+        require(numAddressesWhitelisted < maxwhilelistAddresses, "Max whilelist addresses already registered");
 
         // 화리에 등록시킬 주소를 맵에 추가, 키는 지갑주소, 값은 true
         whilelistAddresses[msg.sender] = true;
         // 화리에 등록된 지갑수 추가
-        numAddressesWhilelisted += 1;
+        numAddressesWhitelisted += 1;
     }
 
 }
